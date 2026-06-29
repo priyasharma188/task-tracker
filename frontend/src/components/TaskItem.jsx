@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/tasks";
+const API_URL = "https://task-tracker-vskt.onrender.com/tasks";
 
 function TaskItem({ task, refreshTasks, onEdit }) {
   if (!task) return null;
