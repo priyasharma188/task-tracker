@@ -1,0 +1,246 @@
+body {
+  min-height: 100vh;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+body.light-mode {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(16, 185, 129, 0.12),
+      transparent 22%
+    ),
+    linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+  color: #0f172a;
+}
+
+body.dark-mode {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(56, 189, 248, 0.16),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(34, 197, 94, 0.14),
+      transparent 18%
+    ),
+    linear-gradient(180deg, #020617 0%, #0b1224 100%);
+  color: #e2e8f0;
+}
+
+.task-app {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.task-app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 22% 22%,
+      rgba(56, 189, 248, 0.12),
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(16, 185, 129, 0.12),
+      transparent 22%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app-header {
+  border-radius: 34px;
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.35);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+body.light-mode .app-header {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: #0f172a;
+}
+
+body.dark-mode .app-header {
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  color: #e2e8f0;
+}
+
+.task-form-card,
+.task-list-card,
+.task-card {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 28px;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+body.light-mode .task-form-card,
+body.light-mode .task-list-card,
+body.light-mode .task-card {
+  background: rgba(255, 255, 255, 0.96);
+  color: #0f172a;
+}
+
+body.dark-mode .task-form-card,
+body.dark-mode .task-list-card,
+body.dark-mode .task-card {
+  background: rgba(15, 23, 42, 0.93);
+  color: #e2e8f0;
+}
+
+.task-form-card,
+.task-list-card {
+  backdrop-filter: blur(18px);
+}
+
+.task-card {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.45);
+}
+
+body.light-mode .task-card:hover {
+  box-shadow: 0 24px 70px rgba(148, 163, 184, 0.2);
+}
+
+body.dark-mode .task-card:hover {
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.55);
+}
+
+.task-completed {
+  background: rgba(34, 197, 94, 0.14);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.task-card .card-body {
+  padding: 1.5rem;
+}
+
+.task-card .badge {
+  font-size: 0.82rem;
+  padding: 0.55rem 0.9rem;
+}
+
+.task-list-wrapper {
+  display: grid;
+  gap: 1rem;
+}
+
+.task-count {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+body.light-mode .task-count {
+  color: #64748b;
+}
+
+body.dark-mode .task-count {
+  color: #94a3b8;
+}
+
+body.light-mode .text-muted {
+  color: #64748b !important;
+}
+
+body.dark-mode .text-muted {
+  color: #94a3b8 !important;
+}
+
+body.light-mode .form-control {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+body.dark-mode .form-control {
+  background: #101827;
+  color: #e2e8f0;
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+body.light-mode .form-control:focus {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+body.dark-mode .form-control:focus {
+  background: #101827;
+  color: #e2e8f0;
+  box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.25);
+}
+
+body.light-mode .btn-outline-dark {
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.18);
+  background: transparent;
+}
+
+body.light-mode .theme-toggle-button {
+  color: #0f172a;
+}
+
+body.light-mode .btn-outline-dark:hover,
+body.light-mode .theme-toggle-button:hover {
+  color: #000000;
+  background: rgba(15, 23, 42, 0.08);
+}
+
+body.dark-mode .btn-outline-light {
+  color: #ffffff;
+  border-color: rgba(226, 232, 240, 0.35);
+  background: transparent;
+}
+
+body.dark-mode .btn-outline-light:hover,
+body.dark-mode .theme-toggle-button:hover {
+  color: #000000;
+  background: rgba(226, 232, 240, 0.1);
+}
+
+.theme-toggle-button {
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+@media (max-width: 991.98px) {
+  .app-header {
+    border-radius: 24px;
+  }
+}
